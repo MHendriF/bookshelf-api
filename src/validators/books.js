@@ -1,8 +1,8 @@
-const Joi = require('joi');
+const Joi = require('@hapi/joi');
 
 const addBook = {
   payload: Joi.object({
-    name: Joi.string().required(),
+    name: Joi.string(),
     year: Joi.number().integer().required(),
     author: Joi.string().required(),
     summary: Joi.string().required(),
@@ -15,7 +15,7 @@ const addBook = {
 
 const updateBook = {
   payload: Joi.object({
-    name: Joi.string().required(),
+    name: Joi.string(),
     year: Joi.number().integer().required(),
     author: Joi.string().required(),
     summary: Joi.string().required(),

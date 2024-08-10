@@ -13,6 +13,15 @@ const addBook = (request, h) => {
     reading,
   } = request.payload;
 
+  if (!name) {
+    return h
+      .response({
+        status: 'fail',
+        message: 'Gagal menambahkan buku. Mohon isi nama buku',
+      })
+      .code(400);
+  }
+
   if (readPage > pageCount) {
     return h
       .response({
@@ -140,6 +149,15 @@ const updateBook = (request, h) => {
     readPage,
     reading,
   } = request.payload;
+
+  if (!name) {
+    return h
+      .response({
+        status: 'fail',
+        message: 'Gagal memperbarui buku. Mohon isi nama buku',
+      })
+      .code(400);
+  }
 
   if (readPage > pageCount) {
     return h
