@@ -15,11 +15,9 @@ const init = async () => {
   server.route(booksRoutes);
 
   await server.start();
-  console.log(`Server berjalan pada ${server.info.uri}`);
 };
 
-process.on('unhandledRejection', (err) => {
-  console.log(err);
+process.on('unhandledRejection', () => {
   process.exit(1);
 });
 
