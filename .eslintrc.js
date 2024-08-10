@@ -14,5 +14,8 @@ module.exports = {
   },
   rules: {
     'linebreak-style': ['error', 'windows'],
+    'implicit-arrow-linebreak': 'off',
+    'comma-dangle': 'off',
+    'function-paren-newline': 'off',
   },
 };
